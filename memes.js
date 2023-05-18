@@ -72,8 +72,6 @@ function checkImageFile() {
   var imageFileInput = document.getElementById("imageFileInput");
   var topTextInput = document.getElementById("topTextInput");
   var bottomTextInput = document.getElementById("bottomTextInput");
-  
-  // Enable or disable the text input fields based on the image file input value
   if (imageFileInput.files.length > 0) {
     topTextInput.disabled = false;
     bottomTextInput.disabled = false;
@@ -87,8 +85,6 @@ function checkInputs() {
   var topInput = document.getElementById("topTextInput");
   var bottomInput = document.getElementById("bottomTextInput");
   var downloadButton = document.getElementById("downloadButton");
-  
-  // Enable or disable the download button based on the input fields' values
   if (topInput.value && bottomInput.value) {
     downloadButton.disabled = false;
   } else {
@@ -98,6 +94,7 @@ function checkInputs() {
 
 
 // Download image as PNG file
+
 function downloadImage() {
   var canvas = document.getElementById("meme");
   var dataURL = canvas.toDataURL("image/png");
