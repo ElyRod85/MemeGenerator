@@ -1,19 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,500;0,800;0,900;1,400&display=swap');
 
 * {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Nunito', sans-serif;
     box-sizing: border-box;
     scroll-behavior: smooth;
+}
+  
+::selection {
+    background-color: rgba(255, 226, 192, 0.5);
 }
 
 body {
     background-color: rgb(255, 255, 255);
     margin: 0;
 }
-
+  
 a {
     text-decoration: none;
 }
@@ -21,7 +23,7 @@ a {
 a:hover {
     text-decoration: none;
 }
-
+  
 p, h1, h2, h3, h4, h5 {
     color: rgb(63, 63, 63);
 }
@@ -33,13 +35,87 @@ ul {
 li {
     color: rgb(63, 63, 63);
 }
+  
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    line-height: 1.5;
+    font-family: 'Rubik', sans-serif;
+    letter-spacing: -1px;
+    text-align: center;
+}
+  
+main span.highlight {
+    color: rgb(255, 180, 92);
+    font-weight: 700;
+    line-height: 1.5;
+    font-family: 'Rubik', sans-serif;
+    letter-spacing: -1px;
+}
 
+main span.highlight-darker {
+    color: rgb(235, 150, 50);
+    font-weight: 700;
+    line-height: 1.5;
+    font-family: 'Rubik', sans-serif;
+    letter-spacing: -1px;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    letter-spacing: 0;
+    word-spacing: 4px;
+    font-family: 'Nunito', sans-serif;
+}
+
+main em {
+    font-style: italic;
+}
+
+main strong {
+    font-weight: 800;
+}
+  
+h6 {
+    font-size: 16px;
+}
+
+h5 {
+    font-size: 18px;
+}
+  
+h4 {
+    font-size: 20px;
+}
+  
+h3 {
+    font-size: 26px;
+}
+  
+h2 {
+    font-size: 28px;
+}
+  
+h1 {
+    font-size: 32px;
+}
+  
 main {
     width: 100%;
     margin: 30px auto 30px auto;
-    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 0;
 }
 
+section {
+    scroll-margin-top: 90px;
+}
+ 
 
 
 
@@ -82,95 +158,851 @@ main {
     transition: 300ms;
 }
 
+#my-header nav .navbar-nav .disabled {
+    color: rgb(118, 118, 118);
+}
+
+#my-header nav .navbar-nav .disabled:hover {
+    color: rgb(118, 118, 118);
+    cursor: default;
+}
+
+@media (max-width: 990px) {
+    #my-header nav .navbar-nav a {
+        border-bottom: 1px solid rgb(222, 222, 222);
+    }
+
+    #my-header nav .navbar-nav a:last-child {
+        border-bottom: 0;
+    }
+}
 
 
 
 
 
 
-/* Meme Generator */
+/* Header */
 
-
-main .meme-generator {
-    margin: 100px auto;
+main .header {
     width: 100%;
+    padding: 50px 20px 50px 20px;
+    background: rgb(98,98,98);
+    background: -moz-radial-gradient(circle, rgb(90, 90, 90) 0%, rgba(60,60,60,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(90, 90, 90,1) 0%, rgba(60,60,60,1) 100%);
+    background: radial-gradient(circle, rgba(90, 90, 90,1) 0%, rgba(60,60,60,1) 100%);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+
+main .header .greeting {
+    width: 40%;
+}
+
+main .header .about {
+    width: 50%;
+}
+
+@media (max-width: 768px) {
+    main .header {
+        flex-flow: column wrap;
+        gap: 30px;
+    }
+    main .header .greeting {
+        width: 100%;
+    }
+    main .header .about {
+        width: 90%;
+    }
+}
+
+main .header h1 {
+    color: rgb(255, 255, 255);
+    margin: 10px auto 10px auto;
+}
+
+main .header h2 {
+    color: rgb(255, 255, 255);
+    margin: 10px auto 10px auto;
+}
+
+main .header .header-buttons {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 50px auto 20px auto;
+    gap: 100px;
+}
+
+@media (max-width: 1024px) {
+    main .header .header-buttons {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    main .header h1 {
+        font-size: 30px;
+    }
+    main .header h2 {
+        font-size: 26px;
+    }
+}
+
+
+main .header .header-buttons a.my-button {
+    background-color: rgb(255, 180, 92);
+    color: rgb(255, 255, 255);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 2px solid rgb(255, 180, 92);
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.5);
+    transition: 300ms;
+}
+
+main .header .header-buttons a.my-button:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 180, 92);
+    border: 2px solid rgb(255, 255, 255);
+    transition: 300ms;
+}
+
+main .header .header-buttons i {
+    font-size: 14px;
+    padding-left: 5px;
+}
+
+
+main .header .about p {
+    font-family: 'Nunito', sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    font-size: 18px;
+}
+
+main .header .about strong {
+    font-weight: 800;
+}
+
+main .header .about a {
+    font-weight: 800;
+    color: rgb(255, 180, 92);
+    text-decoration: none;
+    transition: 300ms;
+}
+
+main .header .about a:hover {
+    color: rgb(255, 226, 192);
+    transition: 300ms;
+}
+
+
+
+
+
+
+
+
+/* Skills */
+
+main .skills {
+    margin: 60px auto 30px auto;
+}
+
+main .skills .skills-bar {
+    width: 90%;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
     align-items: stretch;
     align-content: center;
+    margin: 30px auto 90px auto;
+}
+
+main .skills .skills-bar h4 {
+    margin: 0 auto 20px auto;
+}
+
+main .skills .skills-bar p {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+}
+
+main .skills .skills-bar strong {
+    font-weight: 800;
+}
+
+main .skills .skills-bar .icon {
+    margin: 15px auto 20px auto;
+    text-align: center;
+}
+
+main .skills .skills-bar .icon i {
+    font-size: 30px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 50px;
+    background-color: rgb(255, 180, 92);
+    color: rgb(255, 255, 255);
+}
+
+main ul.tags {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin-top: 30px;
+}
+
+main ul.tags li {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 900;
+    background-color: rgb(255, 180, 92);
+    color: rgb(255, 255, 255);
+    border-radius: 50px;
+    border: 1px solid rgb(255, 180, 92);
+    padding: 2px 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 5px;
+}
+
+main .skills .skill {
+    width: 27%;
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,0.11);
+    border-radius: 5px;
+    transition: 300ms;
+}
+
+main .skills .skill:hover {
+    border: 1px solid rgb(255, 180, 92);
+    box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.11);
+    -webkit-box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.11);
+    -moz-box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.11);
+    transition: 300ms;
+}
+
+@media (max-width: 1366px) {
+    main .skills .skills-bar {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {
+    main .skills .skills-bar {
+        gap: 50px 0;
+    }
+
+    main .skills .skill {
+        width: 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    main .skills .skill {
+        width: 80%;
+    }
+}
+
+
+
+
+
+
+
+/* Projects */
+
+main .skills .gap {
+    gap: 50px 0;
+}
+
+main .skills .image {
+    width: 100%;
+    margin: 20px auto 20px auto;
+}
+
+main .skills .image img {
+    width: 100%;
+    border: 1px solid rgba(0,0,0,0.11);
+    border-radius: 5px;
+    display: block;
+    transition: 300ms;
+}
+
+main .skills .image img:hover {
+    opacity: 0.9;
+    border: 1px solid rgb(255, 180, 92);
+    box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.11);
+    -webkit-box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.11);
+    -moz-box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.11);
+    transition: 300ms;
+}
+
+main .skills .no-border {
+    border: 0;
+}
+
+main .skills .no-border:hover {
+    border: 0;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    transition: 300ms;
+}
+
+main .skills .description {
+    width: 100%;
     padding: 10px;
 }
 
-main .meme-generator .inputs {
-    width: 40%;
+@media (max-width: 768px) {
+    main .skills .image {
+        width: 100%;   
+    }
+    main .skills .description {
+        width: 100%;
+    }
+}
+
+main .skills .description p {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(63, 63, 63);
+}
+
+main ul.features {
+    padding: 0 10px 5px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(63, 63, 63);
+}
+
+main ul.features li {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    padding: 0 10px 10px 0;
+    color: rgb(63, 63, 63);
+}
+
+main .skills h4.project-title {
+    margin: 10px auto 10px auto;
+    text-transform: capitalize;
+}
+
+main .skills .project-desc a {
+    font-weight: 800;
+    color: rgb(235, 150, 50);
+    transition: 300ms;
+}
+
+main .skills .project-desc a:hover {
+    color: rgb(212, 123, 21);
+    transition: 300ms;
+}
+
+
+main .skills .project-desc ul.projects {
+    padding: 5px 10px 5px 30px;
+    margin-top: 5px;
+}
+
+main .skills .project-desc ul.projects li {
+    padding: 5px;
+}
+
+main .skills .header-buttons {
+    width: 100%;
     display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
+    flex-flow: row wrap;
+    justify-content: space-between;
     align-items: center;
+    align-content: center;
+    margin: 30px auto 30px auto;
+    gap: 0;
 }
 
-main .meme-generator .inputs label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-  
-main .meme-generator .inputs input {
-    display: block;
-    box-sizing: border-box;
-    margin-bottom: 20px;
-}
 
-main .meme-generator .inputs input[type="file"] {
-    display: none;
-}
-
-main .meme-generator .inputs .custom-file-upload {
-    margin: 10px auto 50px auto;
-    border: 1px solid #ccc;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 14px;
-    border-radius: 50px;
-    padding: 10px 20px;
-    cursor: pointer;
-    width: fit-content;
+main .skills a.project-button {
     background-color: rgb(255, 180, 92);
     color: rgb(255, 255, 255);
     border: 2px solid rgb(255, 180, 92);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 50px;
     text-decoration: none;
+    font-size: 14px;
+    width: fit-content;
+    display: inline-block;
+    margin: 0 5px 0 5px;
     text-align: center;
     transition: 300ms;
 }
 
-main .meme-generator .inputs .custom-file-upload:hover {
+main .skills a.project-button:hover {
     background-color: rgb(255, 255, 255);
     color: rgb(255, 180, 92);
+    box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.15);
+    -webkit-box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.15);
     transition: 300ms;
 }
 
-main .meme-generator .inputs .custom-file-upload i {
-    padding-right: 10px;
+main .skills p.left {
+    text-align: left;
+    margin-top: 10px;
 }
 
-main .meme-generator .inputs input[type="text"] {
-    width: 70%;
+main .skills h4.project-title {
+    margin: 10px auto 10px auto;
+}
+
+
+
+
+
+
+/* Timeline */
+
+main .education-container {
+    width: 90%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin: 30px auto 90px auto;
+}
+
+main .education-container .timeline {
+  width: 49%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+main .education-container .timeline .timeline-box {
+    width: 100%;
+    margin: 0 auto 50px auto;
+    color: rgb(255, 255, 255);
+    background: rgb(255, 219, 175);
+    background: -moz-radial-gradient(circle, rgb(255, 219, 175) 0%, rgb(255, 198, 132)100%);
+    background: -webkit-radial-gradient(circle, rgba(255, 219, 175,1) 0%, rgba(255, 198, 132, 1) 100%);
+    background: radial-gradient(circle, rgba(255, 219, 175,1) 0%, rgba(255, 198, 132, 1) 100%);
+    border-radius: 5px;
+    padding: 20px;
+    transition: 300ms;
+}
+
+main .education-container .timeline .timeline-box:hover {
+    box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.11);
+    -webkit-box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.11);
+    -moz-box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.11);
+    transition: 300ms;
+}
+
+main .education-container .timeline .timeline-box ul.features {
+    margin-bottom: 0;
+}
+
+main .education-container .timeline .timeline-box ul li a {
+    color: #8F6330;
+}
+
+main .education-container .timeline .timeline-box ul li a:hover {
+    opacity: 0.8;
+}
+
+main .education-container .timeline .timeline-box ul li a:visited {
+    color: #8F6330;
+}
+
+main .education-container .timeline .timeline-box .details {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: center;
+    margin: 0 auto 10px auto;
+}
+
+main .education-container .timeline .timeline-box .details h4 {
+    width: 85%;
+    text-align: left;
+    padding: 0;
+    margin: 0 auto 0 auto;
+}
+
+main .education-container .timeline .timeline-box .details p.date {
+    width: 15%;
+    text-align: right;
+    margin: 0 auto 0 auto;
+    font-size: 14px;
+    padding-left: 10px;
+    font-weight: 800;
+}
+
+main .education-container .timeline .timeline-box p {
+    margin: 10px 0 17px 0;
+    font-size: 16px;
+    display: block;
+    text-align: left;
+}
+
+main .education-container .timeline .timeline-box .cert-links {
+    margin: 0 auto 20px auto;
+    padding: 0;
+    text-align: left;
+    display: block;
+}
+
+main .education-container .timeline .timeline-box .cert-links a {
+  text-decoration: none;
+  background-color: rgb(63, 63, 63);
+  color: rgb(255, 226, 192);
+  border-radius: 50px;
+  font-weight: 900;
+  padding: 10px 15px;
+  margin: 5px;
+  text-align: center;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  transition: 300ms;
+  box-shadow: 5px 5px 15px 0px rgba(143, 99, 48, 0.5);
+  -webkit-box-shadow: 5px 5px 15px 0px rgba(143, 99, 48, 0.5);
+  -moz-box-shadow: 5px 5px 15px 0px rgba(143, 99, 48, 0.5);
+}
+
+main .education-container .timeline .timeline-box .cert-links a:hover {
+    color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 15px 0px rgba(143, 99, 48, 0.9);
+    -webkit-box-shadow: 5px 5px 15px 0px rgba(143, 99, 48, 0.9);
+    -moz-box-shadow: 5px 5px 15px 0px rgba(143, 99, 48, 0.9);
+    transition: 300ms;
+}
+
+
+
+
+
+
+/* Courses */
+
+main .education-container .courses {
+    width: 49%;
+    padding: 0;
+}
+
+main .education-container .courses details {
     padding: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    margin: 0 auto 30px auto;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,0.15);
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.11);
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.11);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.11);  
+}
+
+main .education-container .courses details summary::marker {
+    color: rgb(235, 150, 50);
+}
+
+main .education-container .courses details summary {
+    padding: 10px;
+    font-weight: 700;
+    line-height: 1.5;
+    font-family: 'Rubik', sans-serif;
+    letter-spacing: -1px;
+    font-size: 20px;
+    cursor: pointer;
+    color: rgb(63, 63, 63);
+}
+
+main .education-container .courses ul {
+    padding: 5px 10px 5px 30px;
+    margin-top: 10px;
+}
+
+main .education-container .courses ul li {
+    padding: 5px;
+}
+
+main .education-container .courses details a {
+    font-weight: 800;
+    color: rgb(235, 150, 50);
+    font-size: 16px;
+    transition: 300ms;
+}
+
+main .education-container .courses details a:hover {
+    color: rgb(143, 99, 48);
+    transition: 300ms;
+}
+
+main .education-container .courses details a:visited {
+    color: rgb(235, 150, 50);
+}
+
+
+
+@media(max-width: 968px){
+    main .education-container {
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        gap: 30px;
+    }
+    main .education-container .courses {
+        width: 90%;
+    }
+    main .education-container .timeline {
+        width: 90%;
+        margin-bottom: 0;
+    }
+    main .education-container .timeline .timeline-box:last-child {
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+/* Work experience */
+
+#experience .zigzag {
+    width: 90%;
+    margin: 50px auto 90px auto;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 50px;
+}
+
+#experience .zigzag .icon {
+    margin: 15px auto 20px auto;
+    text-align: center;
+}
+
+#experience .zigzag .icon i {
+    font-size: 30px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 50px;
+    background-color: rgb(255, 180, 92);
+    color: rgb(255, 255, 255);
+}
+
+#experience .zigzag .leftzig {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+    border: 1px solid rgb(60,60,60);
+    border-radius: 5px;
+    transition: 300ms;
+    background: rgb(98,98,98);
+    background: -moz-radial-gradient(circle, rgb(90, 90, 90) 0%, rgba(60,60,60,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(90, 90, 90,1) 0%, rgba(60,60,60,1) 100%);
+    background: radial-gradient(circle, rgba(90, 90, 90,1) 0%, rgba(60,60,60,1) 100%);
+}
+
+#experience .zigzag .rightzig {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+    border: 1px solid rgb(60,60,60);
+    border-radius: 5px;
+    transition: 300ms;
+    background: rgb(98,98,98);
+    background: -moz-radial-gradient(circle, rgb(90, 90, 90) 0%, rgba(60,60,60,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(90, 90, 90,1) 0%, rgba(60,60,60,1) 100%);
+    background: radial-gradient(circle, rgba(90, 90, 90,1) 0%, rgba(60,60,60,1) 100%);
+}
+
+#experience .zigzag .leftzig:hover {
+    box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.11);
+    -webkit-box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.11);
+    -moz-box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.11);
+    transition: 300ms;
+}
+
+#experience .zigzag .rightzig:hover {
+    box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.11);
+    -webkit-box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.11);
+    -moz-box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.11);
+    transition: 300ms;
+}
+
+#experience .zigzag .zigtitles {
+    width: 30%;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+}
+
+#experience .zigzag .zigtitles .icon {
+    margin: 15px auto 40px auto;
+}
+
+#experience .zigzag .zigtitles p.date {
+    color: rgb(255, 255, 255);
+    margin: 10px auto 10px auto;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+#experience .zigzag .zigtitles h4 {
+    color: rgb(255, 180, 92);
+    margin: 10px auto 10px auto;
+}
+
+#experience .zigzag .zigtitles h6 {
+    color: rgb(255, 255, 255);
+    margin: 10px auto 10px auto;
+}
+
+#experience .zigzag .leftzig .zigdesc {
+    width: 70%;
+    align-self: stretch;
+    padding: 20px;
+    color: rgb(63, 63, 63);
+    background-color: rgb(255, 255, 255);
+    border-radius: 0 5px 5px 0;
+}
+
+#experience .zigzag .rightzig .zigdesc {
+    width: 70%;
+    align-self: stretch;
+    padding: 20px;
+    color: rgb(63, 63, 63);
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px 0 0 5px;
+}
+
+#experience .zigzag .zigdesc p {
+    padding: 0 10px 15px 10px;
+    margin: 0;
+}
+
+@media(max-width: 768px) {
+    #experience .zigzag {
+        width: 80%;
+    }
+    #experience .zigzag .leftzig {
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        gap: 0;
+    }
+    #experience .zigzag .zigtitles {
+        width: 100%;
+        order: 1;
+    }
+    #experience .zigzag .leftzig .zigdesc {
+        width: 100%;
+        align-self: center;
+        border-radius: 0 0 5px 5px;
+        order: 2;
+    }
+
+    #experience .zigzag .rightzig .zigdesc {
+        width: 100%;
+        align-self: center;
+        border-radius: 0 0 5px 5px;
+        order: 2;
+    }
+    
+}
+
+
+
+
+
+
+
+/* Contact Form */
+
+main #contact {
+    margin-bottom: 90px;
+}
+
+main #contact .contact-form {
+    width: 90%;
+    text-align: center;
+    margin: 0 auto 0 auto;
+    padding-top: 10px;
+}
+  
+main #contact .contact-form form {
+    margin-top: 50px;
+}
+
+.contact-form label {
+    display: block;
+    margin: 10px auto 10px auto;
+    line-height: 1.5;
+    color: rgb(63, 63, 63);
+    font-weight: 800;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 0;
+    font-size: 18px;
+}
+  
+main #contact .contact-form input {
+    width: 30%;
+    padding: 15px 20px;
     box-sizing: border-box;
     display: block;
-    font-size: 16px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
+    font-size: 18px;
+    font-family: 'Nunito', sans-serif;
     border-radius: 5px;
-    margin: 5px auto 50px auto;
+    margin: 10px auto 50px auto;
     color: rgb(63, 63, 63);
     border: 2px solid rgb(184, 184, 184);
 }
-
-main .meme-generator .inputs input[type="text"]:focus {
+  
+main #contact .contact-form input:focus {
     border: 2px solid rgb(184, 184, 184);
     background-color: rgb(255, 240, 222);
     box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.11);
@@ -178,80 +1010,176 @@ main .meme-generator .inputs input[type="text"]:focus {
     -moz-box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.11);
 }
 
+main #contact .contact-form input:autofill {
+    background-color: rgb(255, 240, 222);
+}
 
-
-main .meme-generator .the-meme {
-    width: 40%;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
+main #contact .contact-form input:-webkit-autofill {
+    background-color: rgb(255, 240, 222);
 }
   
-main .meme-generator #meme {
-    width: 100%;
+main #contact .contact-form textarea {
+    width: 50%;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    display: block;
+    height: 250px;
+    font-size: 18px;
+    font-family: 'Nunito', sans-serif;
+    border-radius: 5px;
+    margin: 10px auto 50px auto;
+    color: rgb(63, 63, 63);
+    border: 2px solid rgb(184, 184, 184);
+}
+ 
+main #contact .contact-form textarea:focus {
+    border: 2px solid rgb(184, 184, 184);
+    background-color: rgb(255, 240, 222);
+    box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.11);
+    -webkit-box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.11);
+    -moz-box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.11);
 }
 
-main .meme-generator .the-meme #downloadButton {
-    margin: 50px auto 0 auto;
-    text-align: center;
+main #contact .contact-form p.contact-link {
+    font-size: 18px;
+    margin: 15px auto 15px auto;
+    letter-spacing: 0;
+    word-spacing: 2px;
     font-family: 'Nunito', sans-serif;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 14px;
-    border-radius: 50px;
-    padding: 10px 20px;
-    cursor: pointer;
-    width: fit-content;
+    color: rgb(63, 63, 63);
+    font-weight: 800;
+}
+  
+main #contact .contact-form p.contact-link a {
+    color: rgb(235, 150, 50);
+    transition: 300ms;
+}
+  
+  
+main #contact .contact-form p.contact-link a:hover {
+    color: rgb(212, 123, 21);
+    transition: 300ms;
+}
+
+main #contact .contact-form .contact-buttons {
+    width: 50%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    margin: 50px auto 20px auto;
+    gap: 0;
+}
+
+main #contact .contact-form .contact-buttons button {
     background-color: rgb(255, 180, 92);
     color: rgb(255, 255, 255);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 50px;
     border: 2px solid rgb(255, 180, 92);
     text-decoration: none;
+    font-size: 14px;
+    display: inline-block;
     text-align: center;
     transition: 300ms;
 }
 
-main .meme-generator .the-meme #downloadButton:hover {
+main #contact .contact-form .contact-buttons button:hover {
     background-color: rgb(255, 255, 255);
     color: rgb(255, 180, 92);
+    border: 2px solid rgb(255, 180, 92);
+    cursor: pointer;
     transition: 300ms;
 }
 
-main .meme-generator .the-meme #downloadButton:disabled {
+main #contact .contact-form .contact-buttons button.reset {
     background-color: rgb(141, 141, 141);
     border: 2px solid rgb(141, 141, 141);
-    color: rgb(255, 255, 255);
-    cursor: default;
-    transition: 300ms;
 }
 
+main #contact .contact-form .contact-buttons button.reset:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(141, 141, 141);
+}
 
-@media(max-width: 1024px) {
-    main .meme-generator .inputs input[type="text"] {
-        width: 90%;
+main #contact .contact-form .contact-buttons  i {
+    font-size: 14px;
+    padding-left: 5px;
+}
+
+@media (max-width: 1366px) {
+    main #contact .contact-form input {
+        width: 40%;
+    }
+    main #contact .contact-form textarea {
+        width: 60%;
+    }
+    main #contact .contact-form .contact-buttons {
+        width: 60%;
+        gap: 30px;
     }
 }
 
 @media(max-width: 768px) {
-    main .meme-generator {
-        flex-flow: column wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 50px;
-    }
-    main .meme-generator .inputs {
+    main #contact .contact-form input {
         width: 90%;
     }
-    main .meme-generator .inputs input[type="text"] {
-        width: 70%;
+    main #contact .contact-form textarea {
+        width: 90%;
     }
-    main .meme-generator .the-meme {
+    main #contact .contact-form .contact-buttons {
         width: 90%;
     }
 }
+  
 
 
+
+
+/* Back to top button */
+
+#backButton {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 98;
+    border: none;
+    outline: none;
+    color: rgb(235, 150, 50);
+    cursor: pointer;
+    padding: 0px;
+    font-size: 18px;
+    background-color: none;
+    background: none;
+}
+  
+#backButton i {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50px;
+    background-color: rgb(255, 180, 92);
+    color: rgb(255, 255, 255);
+}
+  
+#backButton i:hover {
+    background-color: rgb(235, 150, 50);
+    transition: 300ms;
+}
+  
 
 
 
@@ -274,8 +1202,11 @@ footer .footer-name p {
     text-align: center;
     margin: 0 auto 0 auto;
     padding: 10px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 900;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
+
+
+
