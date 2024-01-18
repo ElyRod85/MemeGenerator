@@ -9,22 +9,13 @@
     scroll-behavior: smooth;
 }
 
-body { background-color: rgb(255, 255, 255); margin: 0; }
+body { background-color: #ffffff; margin: 0; }
 
 a { text-decoration: none;
     &:hover { text-decoration: none; }
 }
 
-a
-
-p, h1, h2, h3, h4, h5 {
-    color: rgb(63, 63, 63);
-}
-
-ul { color: rgb(63, 63, 63); }
-li { color: rgb(63, 63, 63); }
-
-main { width: 100%; margin: 30px auto; padding: 0; }
+p, h1, h2, h3, h4, h5, ul, li { color: #3f3f3f; }
 
 
 
@@ -34,7 +25,7 @@ main { width: 100%; margin: 30px auto; padding: 0; }
     button { border: 0; outline: none; }
     nav {
         padding: 10px 20px 10px 20px; margin-bottom: 40px;
-        background-color: rgb(255, 255, 255);
+        background-color: #ffffff;
         border-bottom: 1px solid rgba(0,0,0,0.11);
         width: 100%;
         z-index: 1;
@@ -42,16 +33,16 @@ main { width: 100%; margin: 30px auto; padding: 0; }
         .navbar-brand {
             font-family: 'Rubik', sans-serif;
             letter-spacing: -1px;
-            color: rgb(63, 63, 63);
+            color: #3f3f3f;
         }
         .navbar-nav a {
             font-family: 'Nunito', sans-serif;
             font-weight: 900; font-size: 16px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: rgb(255, 180, 92);
+            color: #ffb45c;
             transition: 300ms;
-            &:hover { color: rgb(235, 150, 50); transition: 300ms; }
+            &:hover { color: #eb9632; transition: 300ms; }
         }
     }
 }
@@ -60,84 +51,84 @@ main { width: 100%; margin: 30px auto; padding: 0; }
 
 /* Meme Generator */
 
-main .meme-generator {
-    margin: 100px auto; padding: 10px;
-    width: 100%;
+main { width: 100%; margin: 30px auto; padding: 0;  
+    .meme-generator {
+    margin: 100px auto; padding: 10px; width: 100%;
     display: flex; flex-flow: row wrap; justify-content: space-evenly; align-items: stretch; align-content: center;
+    #meme { width: 100%; }
     .inputs {
         width: 40%; display: flex; flex-flow: column wrap; justify-content: center; align-items: center;
         label { display: block; font-weight: bold; margin-bottom: 5px; }
-        input { display: block; box-sizing: border-box; margin-bottom: 20px; }
-        input[type="file"] { display: none; }
-        input[type="text"] {
-            width: 70%;
-            padding: 10px; margin: 5px auto 50px auto;
-            box-sizing: border-box;
-            display: block;
-            font-size: 16px; font-weight: 400;
-            font-family: 'Lato', sans-serif;
-            color: rgb(63, 63, 63);
-            border: 2px solid rgb(184, 184, 184); border-radius: 5px;
-            &:focus {
-                border: 2px solid rgb(184, 184, 184);
-                background-color: rgb(255, 240, 222);
-                box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.11); -webkit-box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.11); -moz-box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.11);
+        input { display: block; box-sizing: border-box; margin-bottom: 20px; 
+            &[type="file"] { display: none; }
+            &[type="text"] {
+                width: 70%;
+                padding: 10px; margin: 5px auto 50px auto;
+                box-sizing: border-box;
+                display: block;
+                font-size: 16px; font-weight: 400;
+                font-family: 'Lato', sans-serif;
+                color: #3f3f3f;
+                border: 2px solid #b8b8b8; border-radius: 5px;
+                &:focus {
+                    border: 2px solid #b8b8b8;
+                    background-color: #fff0de;
+                    box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.11); 
+                    -webkit-box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.11); -moz-box-shadow: 0px 0px 22px 0px rgba(0,0,0,0.11);
+                    }
+                }
             }
-        }   
-    }
-}
-
-
-main .meme-generator .inputs .custom-file-upload {
-    margin: 10px auto 50px auto; padding: 10px 20px;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 900; font-size: 14px; text-align: center;
-    text-transform: uppercase; text-decoration: none;
-    letter-spacing: 1px;
-    cursor: pointer;
-    width: fit-content;
-    background-color: rgb(255, 180, 92); color: rgb(255, 255, 255);
-    border: 2px solid rgb(255, 180, 92); border-radius: 50px;
-    transition: 300ms;
-    i { padding-right: 10px; }
-    &:hover {
-        background-color: rgb(255, 255, 255);
-        color: rgb(255, 180, 92);
-        transition: 300ms;
-    }
-}
-
-main .meme-generator .the-meme { width: 40%; 
-    display: flex; flex-flow: column wrap; justify-content: center; align-items: center; 
-    #downloadButton {
-        margin: 50px auto 0 auto; padding: 10px 20px;
-        font-family: 'Nunito', sans-serif;
-        font-weight: 900; font-size: 14px;
-        text-decoration: none; text-align: center;
-        text-transform: uppercase; letter-spacing: 1px;
-        width: fit-content;
-        background-color: rgb(255, 180, 92);
-        color: rgb(255, 255, 255);
-        border: 2px solid rgb(255, 180, 92); border-radius: 50px;
-        cursor: pointer;
-        transition: 300ms;
-        i { padding-right: 10px; }
-        &:hover {
-            background-color: rgb(255, 255, 255);
-            color: rgb(255, 180, 92);
-            transition: 300ms;
+        .custom-file-upload {
+                margin: 10px auto 50px auto; padding: 10px 20px;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 900; font-size: 14px; text-align: center;
+                text-transform: uppercase; text-decoration: none;
+                letter-spacing: 1px;
+                cursor: pointer;
+                width: fit-content;
+                background-color: #ffb45c; color: #ffffff;
+                border: 2px solid #ffb45c; border-radius: 50px;
+                transition: 300ms;
+                i { padding-right: 10px; }
+                &:hover {
+                    background-color: #ffffff;
+                    color: #ffb45c;
+                    transition: 300ms;
+                }
+            }
         }
-        &:disabled {
-            background-color: rgb(141, 141, 141);
-            border: 2px solid rgb(141, 141, 141);
-            color: rgb(255, 255, 255);
-            cursor: default;
-            transition: 300ms;
+        .the-meme { width: 40%; 
+            display: flex; flex-flow: column wrap; justify-content: center; align-items: center; 
+            #downloadButton {
+                margin: 50px auto 0 auto; padding: 10px 20px;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 900; font-size: 14px;
+                text-decoration: none; text-align: center;
+                text-transform: uppercase; letter-spacing: 1px;
+                width: fit-content;
+                background-color: #ffb45c;
+                color: #ffffff;
+                border: 2px solid #ffb45c; border-radius: 50px;
+                cursor: pointer;
+                transition: 300ms;
+                i { padding-right: 10px; }
+                &:hover {
+                    background-color: #ffffff;
+                    color: rgb(255, 180, 92);
+                    transition: 300ms;
+                }
+                &:disabled {
+                    background-color: #8d8d8d;
+                    border: 2px solid #8d8d8d;
+                    color: rgb(255, 255, 255);
+                    cursor: default;
+                    transition: 300ms;
+                }
+            }
         }
     }
 }
-  
-main .meme-generator #meme { width: 100%; }
+
 
 @media(max-width: 1024px) {
     main .meme-generator .inputs input[type="text"] { width: 90%; }
@@ -158,19 +149,19 @@ main .meme-generator #meme { width: 100%; }
 /* Footer */
 
 footer {
-    background: rgb(98,98,98);
+    background: #626262;
     background: -moz-radial-gradient(circle, rgb(90, 90, 90) 0%, rgba(60,60,60,1) 100%);
     background: -webkit-radial-gradient(circle, rgba(90, 90, 90,1) 0%, rgba(60,60,60,1) 100%);
     background: radial-gradient(circle, rgba(90, 90, 90,1) 0%, rgba(60,60,60,1) 100%);
     padding: 0;
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     width: 100%;
     margin: 200px auto 0 auto;
     p {
-        color: rgb(255, 255, 255);
+        color: #ffffff;
         font-size: 12px;
         text-align: center;
-        margin: 0 auto 0 auto;
+        margin: 0 auto;
         padding: 10px;
         font-family: 'Lato', sans-serif;
         font-weight: 900;
